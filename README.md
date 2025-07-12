@@ -1,1 +1,9 @@
 # 3D-Printing-Dataset
+
+ We provide 2,638 manually validated RGB images in nine classes: eight types of defects (Spaghetti, Stringing, Blobs / Zits, Warping, Z Seam, Layer Shifting, Delamination, Overhang) and one “Okay” class. The images were captured in uniform lighting using an iPhone 13 Pro against a white background and then cleaned and cropped with Canva. 
+    
+   All parts were printed using a standardized setup on a Prusa MK4 printer using Prusa PLA filament and default PrusaSlicer settings. Defects were introduced by varying parameters (e.g., temperature, retraction, cooling) or by sourcing difficult-to-replicate classes from verified external datasets (e.g., Roboflow). Prints were produced under ambient conditions (22–25°C, 40–50\% RH) on a smooth PEI sheet, without enclosures or adhesives, and with no hardware/firmware modifications.
+    
+   We evaluate ten deep learning models spanning both CNN and Transformer families: ResNet18/34/50, VGG16, MobileNetV2, DenseNet121, EfficientNet-B0/B4, ViT-B/16, and Swin-T. All models were fine-tuned on our dataset with ImageNet-pretrained weights. Training used the Adam optimizer for 120 epochs with learning rate scheduling, standard augmentations, and stratified 80/20 splits. Metrics (accuracy, precision, recall, F1-score, MCC, PR/ROC curves) were computed using \texttt{scikit-learn}.
+    
+   Beyond macro-averaged scores, we provide class-wise F1-scores, confusion matrices, and training–validation curves. Our results show that Swin-T achieved the highest performance (F1: 87\%, accuracy: 87\%), especially on subtle defects such as layer separation and Z-seam. Lightweight models like MobileNetV2 reached up to 95\% F1 on large anomalies like Spaghetti but struggled on nuanced features. Our analysis emphasizes the importance of model architecture in achieving generalization, with Transformers generally outperforming CNNs on fine-grained tasks.
