@@ -1,4 +1,5 @@
 # 3D-Printing-Dataset
+<img width="572" height="570" alt="image" src="https://github.com/user-attachments/assets/d08d2e3c-171b-46a2-ad6f-1f15d55aad10" />
 
  We provide 2,638 manually validated RGB images in nine classes: eight types of defects (Spaghetti, Stringing, Blobs / Zits, Warping, Z Seam, Layer Shifting, Delamination, Overhang) and one “Okay” class. The images were captured in uniform lighting using an iPhone 13 Pro against a white background and then cleaned and cropped with Canva. 
     
